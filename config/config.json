@@ -1,0 +1,22 @@
+{
+  "debug" : true,
+  "email" : {
+    "username": "",
+    "password": "",
+    "port": 587,
+    "host": "",
+    "recipient": ""
+  },
+  "siteConfig": {
+    "googleAnalyticsId": "",
+    "hostname": "localhost:3000",
+    "allowGoogleBot": false,
+    "pageTitle": "Default title",
+    "defaultSEOData": {
+      "description": "SEO description",
+      "Keywords": "",
+      "title": "",
+      "image":""
+    }
+  },
+}

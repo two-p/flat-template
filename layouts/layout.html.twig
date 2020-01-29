@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    {%  if (config.googleAnalyticsId) %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.googleAnalyticsId }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ config.googleAnalyticsId }}');
+    </script>
+    {% endif %}
+
+
+    <title>{{page.title | default(config.pageTitle)}}</title>
+    <link rel="icon" type="image/png" href="../build/img/icon/favicon_sm.png"/>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- This is for SEO -->
+    <meta name="description" content="{{ page.description | default(config.defaultSEOData.description) }}"/>
+    <meta name="Keywords" content="{{ page.keywords | default(config.defaultSEOData.keywords) }}">
+
+
+    <!-- This is for index on search engine -->
+    {% if(config.allowGoogleBot) %}
+        <meta name="robots" content="index, follow">
+        <meta name="googlebot" content="index, follow">
+    {% else %}
+        <meta name="robots" content="noindex">
+        <meta name="googlebot" content="noindex">
+    {%  endif %}
+
+    <!--This is for social media preview -->
+    <meta property="og:title" content="{{ page.title | default(config.defaultSEOData.title) }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://{{ config.hostname }}/build/img/{{ page.SEOImage | default(config.defaultSEOData.image) }}.jpg"/>
+    <meta property="og:description" content=""/>
+
+    <!-- Disable google translate -->
+    <meta name="google" content="notranslate">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./build/css/app.css">
+
+    <!-- fonts -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<!--
+Welcome to the upside down ...
+
+Website created by Page Didier - https://github.com/pagedidier
+-->
+<body>
+{% block content %}
+{% endblock %}
+</body>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous">
+</script>
+<script src="./build/js/app.js"></script>
+</html>
