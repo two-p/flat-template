@@ -11,6 +11,6 @@
         }
     ],
      "require": {
-        "two-p/flat-core": "^0.0.1"
+        "two-p/flat-core": "^0.0.2"
     }
 }
